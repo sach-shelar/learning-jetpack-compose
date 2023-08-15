@@ -16,10 +16,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.GenericFontFamily
+import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.sach.learningjetpackcompose.ui.theme.LearningJetpackComposeTheme
 import java.sql.RowId
+import java.util.Locale
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +35,7 @@ class MainActivity : ComponentActivity() {
             LearningJetpackComposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting("Android")
                 }
@@ -41,8 +47,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = "Hello $name!", modifier = modifier
     )
 }
 
@@ -56,17 +61,31 @@ fun GreetingPreview() {
 
 
 @Composable
-fun RowAndColumnSample(){
+fun RowAndColumnSample() {
+
+    val tiltFont = FontFamily(Font(R.font.tilt))
 // Row in compose
-    Row(modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
         verticalAlignment = Alignment.Top,
-        horizontalArrangement = Arrangement.SpaceEvenly) {
-        Text(text = "Sachin123")
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        Text(
+            text = "Sachin".uppercase(), style = TextStyle(
+                fontFamily = FontFamily(Font(R.font.tilt)),
+                fontSize = 40.sp,
+
+
+                )
+        )
         Text(text = "Nilesh")
 
-        Column(verticalArrangement = Arrangement.SpaceBetween,
-            modifier = Modifier.fillMaxHeight()) {
-            Text(text = "Shelar11111111")
+        Column(
+            verticalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxHeight()
+        ) {
+            Text(text = "SHELAR".lowercase())
             Text(text = "Salunke")
         }
     }
