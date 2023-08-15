@@ -53,7 +53,8 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    //Greeting("Android")
+                    TextFieldSample(this)
                 }
             }
         }
@@ -114,9 +115,11 @@ fun ButtonSample() {
             colors = ButtonDefaults.buttonColors(containerColor = Color.DarkGray),
             border = BorderStroke(1.2.dp, Color.Black),
 
-        ) {
-            Text(text = "Border Button",
-                Modifier)
+            ) {
+            Text(
+                text = "Border Button",
+                Modifier
+            )
         }
 
 
