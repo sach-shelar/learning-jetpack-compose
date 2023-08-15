@@ -116,20 +116,6 @@ fun LearnButton() {
             Text(text = "Click Here")
         }
         Spacer(modifier = Modifier.padding(10.dp))
-
-        Button(
-            { },
-            modifier = Modifier
-                .fillMaxWidth(0.5f),
-            colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.purple_200))
-        ) {
-            Text(
-                "Value", modifier = Modifier
-                    .padding(10.dp)
-                    .background(Color.Red)
-                    .clip(shape = RectangleShape)
-
-            )
-        }
+        ButtonView().ButtonWithBoarder()
     }
 }
